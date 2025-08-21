@@ -1,0 +1,96 @@
+/* Hide Redmine 6 inline SVG icons; keep theme's ::before sprites */
+/* svg.icon-svg,
+
+svg.s18.icon-svg,
+svg.s20.icon-svg {
+  display: inline-block !important;
+  width: 20px !important; 
+  height: 18px !important;
+  vertical-align: middle !important;
+  fill: #0a4d6c;       
+}
+
+.icon::before { display: none !important; content: none !important; background: none !important; -webkit-mask: none !important; mask: none !important; }
+.icon > .icon-svg { display: inline-block !important; }
+
+/* --- Admin menu: tidy alignment --- */
+#admin-menu a.icon {
+  display: inline-flex;           /* icon + label in one row */
+  align-items: center;            /* vertical centering */
+  gap: 8px;                       /* space between icon and label */
+  padding-left: 0 !important;     /* neutralize theme paddings */
+  min-height: 24px;
+  line-height: 1.2;
+}
+
+/* Reserve a fixed icon box on the left (works for both ::before and inline SVG) */
+#admin-menu a.icon::before,
+#admin-menu a.icon > svg.icon-svg {
+  flex: 0 0 20px;                 /* fixed slot width */
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+/* Always generate ::before so the column stays aligned even if empty */
+#admin-menu a.icon::before {
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;       /* scale sprite nicely */
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+/* Prefer sprites by default: hide inline SVGs unless needed */
+#admin-menu a.icon > svg.icon-svg {
+  display: none;
+  fill: currentColor;             /* color = text color */
+}
+
+/* If an inline SVG is present, hide the sprite and show the SVG (modern CSS) */
+#admin-menu a.icon:has(> svg.icon-svg)::before {
+  background: none !important;
+  -webkit-mask: none !important;
+          mask: none !important;
+}
+#admin-menu a.icon:has(> svg.icon-svg) > svg.icon-svg {
+  display: inline-block;
+}
+
+/* Optional: keep label neatly aligned */
+#admin-menu a.icon .icon-label {
+  line-height: 1.2;
+}
+
+svg.s20.icon-svg.icon-rtl {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: collapse !important;
+}
+
+a.icon.icon-global_issue_templates {
+  background-image: none !important;
+}
+
+a.icon.icon-view_customize {
+  background-image: none !important;
+}
+
+.legend.cal .icon-svg,
+.legend.cal .icon-label {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+span.ending .icon-svg,
+span.starting .icon-svg,
+span.toggle-multiselect .icon-svg {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: collapse !important;
+}
