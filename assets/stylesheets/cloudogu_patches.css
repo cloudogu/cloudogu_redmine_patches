@@ -1,6 +1,12 @@
 /* Hide Redmine 6 inline SVG icons; keep theme's ::before sprites */
 /* svg.icon-svg,
 
+.icon::before { display: none !important; content: none !important; background: none !important; -webkit-mask: none !important; mask: none !important; }
+.icon > .icon-svg { display: inline-block !important; }
+
+
+
+/* --- Admin menu: tidy alignment --- */
 svg.s18.icon-svg,
 svg.s20.icon-svg {
   display: inline-block !important;
@@ -10,10 +16,6 @@ svg.s20.icon-svg {
   fill: #0a4d6c;       
 }
 
-.icon::before { display: none !important; content: none !important; background: none !important; -webkit-mask: none !important; mask: none !important; }
-.icon > .icon-svg { display: inline-block !important; }
-
-/* --- Admin menu: tidy alignment --- */
 #admin-menu a.icon {
   display: inline-flex;           /* icon + label in one row */
   align-items: center;            /* vertical centering */
