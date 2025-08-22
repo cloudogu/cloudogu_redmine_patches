@@ -2,18 +2,28 @@
 /* svg.icon-svg,
 
 .icon::before { display: none !important; content: none !important; background: none !important; -webkit-mask: none !important; mask: none !important; }
-.icon > .icon-svg { display: inline-block !important; }
+.icon > .icon-svg { display: inline-block !important; } */
 
-
-
-/* --- Admin menu: tidy alignment --- */
+/* Hide all icons by default */
 svg.s18.icon-svg,
 svg.s20.icon-svg {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important; /* safer than collapse */
+}
+
+/* Restore icons only in admin menu */
+#admin-menu svg.s18.icon-svg,
+#admin-menu svg.s20.icon-svg {
   display: inline-block !important;
-  width: 20px !important; 
+  width: 20px !important;
   height: 18px !important;
+  overflow: visible !important;
+  visibility: visible !important;
   vertical-align: middle !important;
-  fill: #0a4d6c;       
+  fill: #0a4d6c !important;
 }
 
 #admin-menu a.icon {
