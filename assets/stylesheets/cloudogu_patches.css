@@ -219,7 +219,7 @@ span.toggle-multiselect .icon-svg {
 #context-menu li > a {
   /* L slot: 10px gutter + 16px icon + 8px gap = 34px
      R slot: 12px gutter + 12px arrow = 24px */
-  padding: 3px 24px 3px 34px !important;         /* less vertical padding */
+  padding: 0px 24px 0px 34px !important;         /* less vertical padding */
   line-height: 18px !important;                  /* more compact line box */
   white-space: normal !important;                /* allow wrapping if needed */
   overflow-wrap: anywhere !important;            /* break long words instead of clipping */
@@ -243,4 +243,12 @@ span.toggle-multiselect .icon-svg {
 /* Optional: slightly tighter submenu header rows */
 #context-menu a.submenu {
   padding-right: 24px !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+
+}
+
+#context-menu li.folder ul li a:not(.icon) {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
