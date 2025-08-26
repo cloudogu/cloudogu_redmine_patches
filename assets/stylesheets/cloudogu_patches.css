@@ -205,3 +205,42 @@ span.toggle-multiselect .icon-svg {
 
 /* keep spacing tidy if items wrap or fonts differ */
 #context-menu li > a:hover { text-decoration: none; }
+
+/* === Context menu: compact rows + auto width for long labels ======== */
+
+/* Let the popover grow with content; wrap only if viewport would overflow */
+#context-menu {
+  width: max-content !important;                 /* expand to longest item */
+  max-width: calc(100vw - 24px) !important;      /* keep on-screen */
+  min-width: 220px !important;                   /* sensible floor */
+}
+
+/* Tighter row geometry */
+#context-menu li > a {
+  /* L slot: 10px gutter + 16px icon + 8px gap = 34px
+     R slot: 12px gutter + 12px arrow = 24px */
+  padding: 3px 24px 3px 34px !important;         /* less vertical padding */
+  line-height: 18px !important;                  /* more compact line box */
+  white-space: normal !important;                /* allow wrapping if needed */
+  overflow-wrap: anywhere !important;            /* break long words instead of clipping */
+}
+
+/* Smaller icon, aligned left in fixed slot */
+#context-menu li > a > svg.icon-svg {
+  left: 10px;                                    /* gutter */
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Right chevron column stays fixed and narrow */
+#context-menu li > a + span.icon-only,
+#context-menu span.icon-only {
+  right: 12px;
+  width: 12px;
+  height: 12px;
+}
+
+/* Optional: slightly tighter submenu header rows */
+#context-menu a.submenu {
+  padding-right: 24px !important;
+}
