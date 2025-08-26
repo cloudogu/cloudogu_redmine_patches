@@ -106,3 +106,49 @@ span.toggle-multiselect .icon-svg {
   overflow: hidden !important;
   visibility: collapse !important;
 }
+
+/* ==== Redmine 6 context menu: use only SVG, no background sprites ==== */
+
+/* 1) Remove any sprite-based backgrounds/pseudo-icons */
+#context-menu a.submenu,
+#context-menu li.folder > a,
+#context-menu li > a.icon,
+#context-menu span.icon-only {
+  background: none !important;
+  background-image: none !important;
+}
+
+#context-menu a.submenu::before,
+#context-menu li.folder > a::before,
+#context-menu li > a.icon::before,
+#context-menu span.icon-only::before {
+  content: none !important;
+  background: none !important;
+  -webkit-mask: none !important;
+          mask: none !important;
+}
+
+/* 2) Re-enable inline SVGs inside the context menu (your global rule hides them) */
+#context-menu svg.s18.icon-svg,
+#context-menu svg.s20.icon-svg,
+#context-menu svg.icon-svg {
+  display: inline-block !important;
+  width: 18px !important;   /* or 20px to match your theme */
+  height: 18px !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  vertical-align: middle;
+  fill: currentColor;       /* inherits text color */
+}
+
+/* 3) Remove extra right padding that was reserved for the old arrow sprite */
+#context-menu a.submenu {
+  padding-right: .25rem !important; /* adjust as you like */
+}
+
+/* Safety: never tile any remaining background accidentally */
+#context-menu a,
+#context-menu li {
+  background-repeat: no-repeat !important;
+}
+
