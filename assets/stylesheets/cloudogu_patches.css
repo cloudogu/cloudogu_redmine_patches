@@ -112,8 +112,7 @@ span.toggle-multiselect .icon-svg {
 /* 1) Remove any sprite-based backgrounds/pseudo-icons */
 #context-menu a.submenu,
 #context-menu li.folder > a,
-#context-menu li > a.icon,
-#context-menu span.icon-only {
+#context-menu li > a.icon {
   background: none !important;
   background-image: none !important;
 }
@@ -129,9 +128,10 @@ span.toggle-multiselect .icon-svg {
 }
 
 /* 2) Re-enable inline SVGs inside the context menu (your global rule hides them) */
-#span.icon-only svg.s18.icon-svg,
-#span.icon-only svg.s20.icon-svg,
-#span.icon-only svg.icon-svg {
+#context-menu svg.s18.icon-svg,
+#context-menu svg.s20.icon-svg,
+#context-menu svg.icon-svg,
+#context-menu span.icon-only {
   display: inline-block !important;
   width: 18px !important;   /* or 20px to match your theme */
   height: 18px !important;
