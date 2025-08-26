@@ -127,7 +127,7 @@ span.toggle-multiselect .icon-svg {
           mask: none !important;
 }
 
-/* 2) Re-enable inline SVGs inside the context menu (your global rule hides them) */
+/* 2) Re-enable inline SVGs inside the context menu */
 #context-menu svg.s18.icon-svg,
 #context-menu svg.s20.icon-svg,
 #context-menu svg.icon-svg,
