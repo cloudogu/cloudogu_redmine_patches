@@ -20,7 +20,7 @@ svg.s20.icon-svg {
   display: inline-block !important;
   width: 20px !important;
   height: 18px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   visibility: visible !important;
   vertical-align: middle !important;
   fill: #0a4d6c !important;
@@ -135,7 +135,7 @@ span.toggle-multiselect .icon-svg {
   display: inline-block !important;
   width: 18px !important;   /* or 20px to match your theme */
   height: 18px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   visibility: visible !important;
   vertical-align: middle;
   fill: currentColor;       /* inherits text color */
@@ -152,3 +152,56 @@ span.toggle-multiselect .icon-svg {
   background-repeat: no-repeat !important;
 }
 
+/* === Context menu: fixed icon + text columns ========================== */
+#context-menu li {
+  position: relative;                 /* for the right-arrow positioning */
+}
+
+#context-menu li > a {
+  display: block;                     /* full clickable row */
+  position: relative;                 /* for the left icon positioning */
+  min-height: 24px;
+  line-height: 20px;
+  /* L: 12px gutter + 20px icon + 8px gap = 40px
+     R: 10px gutter + 12px arrow  = 22px */
+  padding: 6px 22px 6px 40px !important;
+}
+
+/* place the left icon into the reserved slot */
+#context-menu li > a > svg.icon-svg {
+  display: inline-block !important;
+  position: absolute;
+  left: 12px;                         /* gutter */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px !important;
+  height: 20px !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  fill: currentColor;                 /* follow link color */
+  pointer-events: none;               /* clicks go to the link */
+}
+
+/* place the submenu chevron (span.icon-only) as a fixed right column */
+#context-menu li > a + span.icon-only,
+#context-menu span.icon-only {
+  position: absolute;
+  right: 10px;                        /* right gutter */
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block !important;
+  width: 12px;
+  height: 12px;
+}
+
+/* nuke any legacy sprite backgrounds/pseudo icons to avoid doubles */
+#context-menu li > a,
+#context-menu li > a::before,
+#context-menu span.icon-only::before {
+  background: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* keep spacing tidy if items wrap or fonts differ */
+#context-menu li > a:hover { text-decoration: none; }
