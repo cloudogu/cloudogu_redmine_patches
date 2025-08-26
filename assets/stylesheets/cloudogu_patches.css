@@ -129,9 +129,9 @@ span.toggle-multiselect .icon-svg {
 }
 
 /* 2) Re-enable inline SVGs inside the context menu (your global rule hides them) */
-#context-menu svg.s18.icon-svg,
-#context-menu svg.s20.icon-svg,
-#context-menu svg.icon-svg {
+#span.icon-only svg.s18.icon-svg,
+#span.icon-only svg.s20.icon-svg,
+#span.icon-only svg.icon-svg {
   display: inline-block !important;
   width: 18px !important;   /* or 20px to match your theme */
   height: 18px !important;
