@@ -222,7 +222,7 @@ span.toggle-multiselect .icon-svg {
   padding: 0px 24px 0px 34px !important;         /* less vertical padding */
   line-height: 18px !important;                  /* more compact line box */
   white-space: normal !important;                /* allow wrapping if needed */
-  overflow-wrap: anywhere !important;            /* break long words instead of clipping */
+  overflow-wrap: break-word !important;            /* break long words instead of clipping */
 }
 
 /* Smaller icon, aligned left in fixed slot */
