@@ -5,8 +5,7 @@ Redmine::Plugin.register :zzz_cloudogu_redmine_patches do
   description 'Upgrade Helper from Redmine 5 to Redmine 6. Fixes for example duplicate inline SVG icons (keep theme sprites), Active Session Store SLO Bug and view error regarding account/cas and restores legacy plugins compatibility'
 end
 
-# Load the hook and patch
-require_relative 'lib/cloudogu_patches/hooks'
+# Load patches
 require_relative 'lib/cloudogu_patches/account_controller_slo_alias_patch'
 
 # Fixes:
