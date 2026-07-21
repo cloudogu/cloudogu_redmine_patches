@@ -2,7 +2,7 @@ Redmine::Plugin.register :zzz_cloudogu_redmine_patches do
   name        'Cloudogu Redmine Patches'
   author      'Dennis Schwarzer (Cloudogu GmbH)'
   author_url  'https://cloudogu.com'
-  description 'Upgrade Helper from Redmine 5 to Redmine 6. Fixes for example duplicate inline SVG icons (keep theme sprites), Active Session Store SLO Bug and view error regarding account/cas and restores legacy plugins compatibility'
+  description 'Upgrade Helper from Redmine 5 to Redmine 6. Fixes the CAS Single Logout session bug and the missing account/cas view, plus a Rails 8 to_time deprecation warning'
   version     '0.0.11'
   url         'https://github.com/cloudogu/cloudogu_redmine_patches'
 end
