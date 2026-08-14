@@ -35,5 +35,5 @@ upstream - disable the patch on staging first, then remove it.
 
 ## Versioning
 
-Version is a hardcoded string in `init.rb` (currently `0.0.11`), bumped manually per commit.
+Version is a hardcoded string in `init.rb`, bumped manually per commit.
 There's no changelog - `git log init.rb` is the changelog.
